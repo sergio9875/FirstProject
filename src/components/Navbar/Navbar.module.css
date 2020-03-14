@@ -1,0 +1,15 @@
+.nav {
+    background-color: burlywood;
+    grid-area: nav;
+    padding: 20px;
+}
+
+.item a{
+    color: white;
+    text-decoration: none;
+    font-family: cursive;
+    font-size: large;
+}
+.item .activeLink {
+color: cyan;
+}

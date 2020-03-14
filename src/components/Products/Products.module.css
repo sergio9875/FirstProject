@@ -1,0 +1,9 @@
+.products {
+    font-size: 25px;
+    font-family: monospace;
+    text-align: center;
+}
+
+.productsItem {
+    background-color: darkblue;
+}
