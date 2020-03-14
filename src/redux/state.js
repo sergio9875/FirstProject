@@ -9,6 +9,7 @@ let state = {
                 { id: 3, message: 'My Post' },
 
             ],
+        newPostText: 'My Value Text',
         dialogsData: [
 
             { id: 1, name: 'Svetik' },
@@ -41,13 +42,19 @@ let state = {
     }
 }
 
-export let addPostBLL = (postMessage) => {
+export let addPost = () => {
     let newPost = {
-        id: 4, message: postMessage,
+        id: 4, message: state.profilePage.newPostText,
     };
-    state.profilePage.posts.push(newPost)
+    state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
     retireDom(state);
 };
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    retireDom(state);
+}
+
 export let addBook = (bookTitle) => {
     let newBook = {
         id: 5, title: bookTitle, price: 2700
@@ -58,6 +65,6 @@ export let addBook = (bookTitle) => {
 }
 
 
-
+window.state = state;
 
 export default state

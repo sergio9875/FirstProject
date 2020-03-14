@@ -1,20 +1,25 @@
 import React from 'react';
 import s from '../MyPosts/MyPosts.module.css'
 import Post from './Post/Post'
+
+
 const MyPosts = (props) => {
+
+
     let postsElements = props.posts.map(p =>
-        < Post message={p.message} />)
+        < Post key={p.id} message={p.message} />)
 
     let newPostElements = React.createRef();
 
     let addPost = () => {
 
-        let text = newPostElements.current.value;
-        props.addPost(text);
-        newPostElements.current.value = "";
+        props.addPost();
     }
 
-
+    let onPostChange = () => {
+        let text = newPostElements.current.value;
+        props.updateNewPostText(text)
+    }
 
 
     return (
@@ -22,7 +27,9 @@ const MyPosts = (props) => {
 
             <h4>My Posts</h4>
             <div>
-                <div> <textarea ref={newPostElements}></textarea> </div>
+                <div>
+                    <textarea onChange={onPostChange} ref={newPostElements} value={props.updateNewPostText} />
+                </div>
                 <button onClick={addPost}>Add Post</button>
             </div>
 
