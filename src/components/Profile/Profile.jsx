@@ -6,11 +6,12 @@ import ProfileInfo from './ProfileInfo'
 
 const Profile = (props) => {
 
+
     return (
         <div >
             <ProfileInfo />
             < MyPosts posts={props.profilePage.posts}
-                newPostText={props.profilePage.newPostText}
+                newPostText={props.profilePage.newPostText}  // - value in textarea
                 dispatch={props.dispatch} />
         </div>
     )

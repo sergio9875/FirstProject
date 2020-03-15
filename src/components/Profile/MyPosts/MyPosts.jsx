@@ -6,12 +6,13 @@ import { addPostActionCreator, updateNewPosTextActionCreator } from '../../../re
 
 const MyPosts = (props) => {
 
-    let postsElement = props.posts.map(p =>
-        < Post key={p.id} message={p.message} />)
+    let postsElement = props.posts.map((p, index) =>
+        < Post key={index} message={p.message} />)
 
     let newPostElement = React.createRef();
 
     let addPost = () => {
+
 
         //props.addPost();
         props.dispatch(addPostActionCreator())
@@ -20,8 +21,8 @@ const MyPosts = (props) => {
     let onPostChange = () => {
         let text = newPostElement.current.value;
         // props.updateNewPostText(text);
-        let action = updateNewPosTextActionCreator(text);
-        props.dispatch(action);
+        let action = updateNewPosTextActionCreator(text)
+        props.dispatch(action)
     }
 
 
