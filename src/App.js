@@ -7,7 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 //import Dialogs from './components/Dialogs/Dialogs'
 import Advertissing from './components/Advertising/Ads';
-import Products from './components/Products/Products'
+//import Products from './components/Products/Products'
 import { Route } from 'react-router-dom';
 
 
@@ -26,12 +26,12 @@ const App = (props) => {
           dialogsData={props.state.profilePage.dialogsData} />} /> */}
 
         <Route path='/profile' render={() => < Profile profilePage={props.state.profilePage}
-          updateNewPostText={props.updateNewPostText}
-          addPost={props.addPost} />} />
+          // updateNewPostText={props.updateNewPostText}
+          dispatch={props.dispatch} />} />
 
 
-        <Route path='/products' render={() => < Products books={props.state.productsPage.books}
-          addBook={props.addBook} />} />
+        {/* <Route path='/products' render={() => < Products books={props.state.productsPage.books}
+          addBook={props.addBook} />} /> */}
       </div>
       <Advertissing />
       <Footer />
