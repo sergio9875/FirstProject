@@ -15,8 +15,8 @@ let retireDom = (state) => {
         <BrowserRouter>
             <App state={state}
                 dispatch={store.dispatch.bind(store)}
-            // updateNewPostText={store.updateNewPostText.bind(store)}
-            // addBook={store.addBook}
+               store = {store}
+            addBook={store.addBook}
             />
         </BrowserRouter>,
         document.getElementById('root')
